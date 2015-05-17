@@ -16,5 +16,11 @@
         "default_title"		:"Chrome插件",
         "default_popup"		:"popup.html"
     },
-    "options_page"		:"option.html"
+    "options_page"		:"option.html",
+    "content_scripts":[
+      {
+        "matches": ["*://*/*"],
+        "js": ["js/main.js"]
+      }
+    ]
 }
