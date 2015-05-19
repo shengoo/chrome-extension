@@ -1,12 +1,13 @@
-console.log("main.js loaded");
-var title = document.title;
-var description = "";
-var keywords = "";
-var url = document.URL;
-var icon;
+var theName = (function  (my) {
 
-console.log("title:" + title)
-var metas = document.getElementsByTagName('meta');
+  console.log("main.js loaded");
+  var title = document.title;
+  var description = "";
+  var keywords = "";
+  var url = document.URL;
+  var icon;
+
+  var metas = document.getElementsByTagName('meta');
   for (var x=0,y=metas.length; x<y; x++) {
     if (metas[x].name.toLowerCase() == "keywords") {
       keywords = metas[x].content;
@@ -22,7 +23,16 @@ var metas = document.getElementsByTagName('meta');
     }
   }
 
-  console.log("keywords:" + keywords)
-   console.log("description:" + description)
-   console.log("url:" + url)
-   console.log("icon:" + icon)
+
+  my.do = function  () {
+    console.log("title:" + title)
+    console.log("keywords:" + keywords)
+    console.log("description:" + description)
+    console.log("url:" + url)
+    console.log("icon:" + icon)
+  }
+
+  return my;
+}(theName || {}));
+
+theName.do();
