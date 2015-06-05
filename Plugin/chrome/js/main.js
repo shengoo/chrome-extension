@@ -1,4 +1,4 @@
-var theName = (function  (my) {
+var moduleName = (function  (my) {
 
   console.log("main.js loaded");
   var title = document.title;
@@ -33,6 +33,6 @@ var theName = (function  (my) {
   }
 
   return my;
-}(theName || {}));
+}(moduleName || {}));
 
-theName.do();
+moduleName.do();
